@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Стеклянные шарики</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div class="progress_container">
+    <div>Общее количество этажей: <span class="total_floors"></span></div>
+    <div>Общее количество шариков: <span class="total_marbles"></span></div>
+    <div>Шариков осталось: <span class="marbles"></span></div>
+    <div>Общее число попыток: <span class="total_attempts"></span></div>
+    <div>Номер попытки: <span class="attempts">0</span></div>
+</div>
+<div class="container">
+    <div class="form_container">
+        <form class="form">
+            <input type="hidden" name="flag" value="0">
+            <h2>Привет!</h2>
+            <p>Давай я угадаю сколько попыток понадобится, чтобы узнать с какого этажа шарик разобьется?</p>
+            <button type="submit" class="btn">Давай!</button>
+        </form>
+    </div>
+    <div class="animation_container">
+        <img class="animation_img" src="img/Man.gif" alt="">
+    </div>
+</div>
+<script src="scripts/functions.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+</html>

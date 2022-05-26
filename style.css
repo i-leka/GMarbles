@@ -1,0 +1,188 @@
+/*-----СБРОС СТИЛЕЙ--------------------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, input, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: inherit;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*-----ОСНОВНЫЕ--------------------------*/
+
+body {
+    background-color: #dbedff;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+
+    display: flex;
+}
+
+.container > * {
+    width: 50%;
+    height: 100vh;
+}
+
+.btn {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #383d91;
+
+    background-color: white;
+    text-align: center;
+}
+
+.btn:hover {
+    color: white;
+    background-color: #9ba0e8;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/*-----ФОРМА--------------------------*/
+
+.form_container {
+    display: flex;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    max-height: 70%;
+    margin: auto;
+    padding: 20px;
+
+    background-color: #bdc1f2;
+    border-radius: 10px;
+}
+
+.form > *:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+label {
+    margin-left: 10px;
+}
+
+.bottom_container {
+    display: flex;
+    justify-content: center;
+}
+
+.bottom_container > * {
+    width: 50%;
+}
+
+.bottom_container > *:not(:last-child) {
+    margin-right: 10px;
+}
+
+.about_container > * {
+    width: 100vw;
+}
+
+/*-ANIMATION--------------*/
+
+.animation_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: inherit;
+}
+
+.animation_container img {
+    height: 100%;
+}
+
+.progress_container {
+    position: absolute;
+    display: flex;
+    top: 0;
+    width: 100%;
+    background-color: rgba(155, 160, 232, 0.7);;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 10px;
+    opacity: 0;
+}
+
+
+.progress_container span {
+    font-weight: bold;
+}
+
+a {
+    font-weight: bold;
+    color: #383d91;
+}
+
+a:hover {
+    color: white;
+}
