@@ -126,21 +126,20 @@ $(document).on('click', '.no_btn', function (e) {
     count_attempts++;
     start_floor = curr_floor + 1n;
     curr_floor_response = get_floor(start_floor, end_floor, count_marbles, curr_floor);
+    curr_floor = curr_floor_response.curr_floor;
+    curr_floor = curr_floor >= total_floor ? total_floor : curr_floor;
     if (curr_floor_response.isFinish) {
         debug('no_btn finish', curr_floor_response);
         response = finish_template(crash_floor, count_attempts);
-        if (crash_floor === total_floor) {
+        if (curr_floor === total_floor) {
             debug('no_btn finish if crash_floor === total_floor', curr_floor_response);
             response = finish_err_template;
-        }
-        if (curr_floor === start_floor - 1n) {
+        } else {
             response = finish_template(crash_floor, count_attempts);
         }
         name_animation = 'final';
     } else {
-        curr_floor = curr_floor_response.curr_floor;
         debug('no_btn nofinish', curr_floor_response);
-        curr_floor = curr_floor > total_floor ? total_floor : curr_floor;
         response = YesNo_template(curr_floor);
         name_animation = 'man4';
     }
