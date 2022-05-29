@@ -62,15 +62,16 @@ $('.form').submit(function (e) {
                         <input type="hidden" name="flag" value="1">
                         <h2>Узнаем сколько бросков понадобится сделать.</h2>
                         <p>Сколько шариков?</p>
-                        <input type="number" name="count_marbles" value="3">
+                        <input type="number" name="count_marbles" value="3" min="1" required>
                         <p>Сколько этажей?</p>
-                        <input type="number" name="count_floors" value="8">
+                        <input type="number" name="count_floors" value="8" min="1" required>
                         <button type="submit" class="btn btn_jq">Посчитать!</button>`)
             setImage('man2');
             break;
         case '1':
             count_marbles = BigInt($('input[name="count_marbles"]').val());
             count_floors = BigInt($('input[name="count_floors"]').val());
+            count_marbles = count_marbles > ilog2(count_floors + 1n) ? ilog2(count_floors + 1n) : count_marbles;
             end_floor = count_floors;
             total_floor = count_floors;
             crash_floor = end_floor;
@@ -153,12 +154,12 @@ $(document).on('click', '.repeat_btn', function (e) {
 });
 
 $(document).on('click', 'input[name="count_floors"]',  function (e){
-    let count = $('input[name="count_marbles"]').val().length;
+    let count = $('input[name="count_marbles"]').val();
     $('input[name="count_floors"]').attr('max', Math.pow(10, 3 * count));
 });
 
 $(document).on('click', '.btn_jq',  function (e){
-    let count = $('input[name="count_marbles"]').val().length;
+    let count = $('input[name="count_marbles"]').val();
     $('input[name="count_floors"]').attr('max', Math.pow(10, 4 * count));
 });
 

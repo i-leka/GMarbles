@@ -121,6 +121,10 @@ a {
     margin-bottom: 20px;
 }
 
+.form p {
+    word-wrap: break-word;
+}
+
 input {
     padding: 5px 10px;
     border-radius: 5px;

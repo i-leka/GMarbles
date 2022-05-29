@@ -65,3 +65,25 @@ function toLocaleString(number) {
 function setImage(src) {
     $('.animation_img').attr('src', 'img/' + src + '.gif');
 }
+
+function ilog2_pe(value, base = 2n) {
+    // example: ilog2_pe(255n) returns { p: 128n, e: 7n }
+    if (base <= value) {
+        let i = ilog2_pe(value, base ** 2n);
+        let t = i.p * base
+        console.log(t);
+        return (t <= value) ? {p: t, e: i.e * 2n + 1n} : {p: i.p, e: i.e * 2n}
+    }
+    return {p: 1n, e: 0n};
+}
+
+function ilog2(n) {  // n is a positive non-zero BigInt
+    const C1 = 1n;
+    const C2 = 2n;
+    let responce = 0n;
+    for (let count = 0n; n > C1; count++) {
+        n /= C2;
+        responce = count;
+    }
+    return responce + 1n;
+}
